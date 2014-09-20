@@ -60,7 +60,13 @@ measurements <- measurements[ -remCols, ]
 ## Drop excess columns
 outData <- outData[ , measurements$V2 ]
 
+## remove Capital letters, and "-())
+names( outData ) <- tolower( (names(outData)))
+names( outData ) <- gsub( "-", "", names(outData ))
+names( outData ) <- gsub( "\\(", "", names(outData ))
+names( outData ) <- gsub( ")", "", names(outData ))
+
 tidySet <- data.table( outData )
-out<-tidySet[,lapply(.SD,mean),by="Activity,Subject"]
+out<-tidySet[,lapply(.SD,mean),by="activity,subject"]
 write.table(out,file="tidyOutputSet.txt",sep=",",row.names = FALSE)
 
