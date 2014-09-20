@@ -5,6 +5,7 @@ This codebook describes data and the operation taken to cleanse that data.
 2. Operation of the run_analysis.R script
 -------------------------------------------
 The script assumes working directory is allready set to point at the root of the dataset.
+Script is dependent on the "data.table" library.
 
 Script reads in all the data from the test and training datasets, activities and features.
 First training and test data sets are formed by adding activity and subject data as columns and then training and test data sets are merged. Columns are named according to the names in features files.
