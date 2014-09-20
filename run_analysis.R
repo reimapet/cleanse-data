@@ -3,8 +3,9 @@
 ##
 
 ## Set working dir to point at the data
-setwd("c:\\projects\\rwork\\cleanse_data\\project")
+## setwd("c:\\projects\\rwork\\cleanse_data\\project")
 
+library (data.table)
 
 ## Load train and test sets and make one dataframe to contain all the data (outData)
 ## X_* the data
